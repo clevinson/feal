@@ -4,7 +4,6 @@ int downMouseX, downMouseY;
 
 void setup(){
 
-
     if( jQuery(document).height() > jQuery(window).height() ){
       setupHeight = jQuery(document).height();
     }else{
@@ -23,18 +22,14 @@ void draw(){
   float speed = dist(mouseX, mouseY, pmouseX, pmouseY)/5;
   fade(2);
   if(mousePressed){
-  fade(speed);
-  float red = map(mouseX, 0, width, 0, 255);
-  float blue = map(mouseY, 0, height, 0, 255);
-  color col = color(red, 80, blue, 100);
-  int radius = (int)dist(downMouseX, downMouseY, mouseX, mouseY);
+    fade(speed);
+    float red = map(mouseX, 0, width, 0, 255);
+    float blue = map(mouseY, 0, height, 0, 255);
+    color col = color(red, 80, blue, 100);
+    int radius = (int)dist(downMouseX, downMouseY, mouseX, mouseY);
 
-  //float speed = dist(pmouseX, pmouseY, mouseX, mouseY);
-  //float alpha = map(speed, 0, 20, 0, 5);
-  //fade(alpha);
-
-  thisAtom.update(radius, col);
-  thisAtom.display();
+    thisAtom.update(radius, col);
+    thisAtom.display();
   }
 }
 
@@ -70,22 +65,6 @@ class Atom {
 
   void display(){
     noFill();
-    //noStroke();
-    /**
-    if(growing){
-      for(int r = prevRadius; r < radius; r++){
-        color col = colorMap(r, prevRadius, radius, lastColor, strokeColor);
-        stroke(col);
-        ellipse(xpos, ypos, r, r);
-      }
-    }else{
-      for(int r = radius; r < prevRadius; r++){
-        color col = colorMap(r, prevRadius, radius, lastColor, strokeColor);
-        stroke(col);
-        ellipse(xpos, ypos, r, r);
-      }
-    }
-    **/
     drawEdgeGradient();
   }
 
