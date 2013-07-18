@@ -1,7 +1,7 @@
 Atom[] world = new Atom[500];
 
 void setup(){
-  background(250,255,220);
+  background(255,255,250);
 
   size(document.width,document.height, JAVA2D);
   smooth();
@@ -43,7 +43,7 @@ class Atom {
     set_velocity();
     colorMode(HSB, 100);
     float hue = 100*y/width;
-    myColor = color(50 + hue/20, 100, 30);
+    myColor = color(55 + hue/20, 100, 20);
     gravity_vel = new PVector(0.001,0.001);
   }
   
