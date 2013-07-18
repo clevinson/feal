@@ -1,0 +1,36 @@
+<html>
+<head>
+  <script src="js/processing-1.4.1.min.js"></script>
+  <script src="js/jquery-1.8.2.min.js"></script>
+  
+  <style>
+    body {
+      margin: 0px;
+      overflow: hidden;
+      background-color: black;
+      font-color : white;
+    }
+
+    #canvas {
+      overflow: hidden;
+      width: windowWidth;
+      height: windowHeight;
+      padding-left: 0px;
+      padding-top: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    var noiseSpin = <%= noiseSpin %>;
+    var noiseScale = <%= noiseScale %>;
+    $.get('perlin.pde', function(sketchFile) {
+      sketch = new Processing('canvas', sketchFile);
+      console.log('Processing.js sketch ready');
+    });
+  </script>
+
+  <canvas id="canvas"></canvas>
+</body>
+</html>
