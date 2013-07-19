@@ -3,7 +3,7 @@ Atom[] world = new Atom[500];
 void setup(){
   background(255,255,250);
 
-  size(document.width*2,document.height*2, JAVA2D);
+  size(window.innerWidth*window.devicePixelRatio, window.innerHeight*window.devicePixelRatio, JAVA2D);
   smooth();
 
   for(int i=0; i<world.length; i++){
