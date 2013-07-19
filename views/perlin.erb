@@ -13,8 +13,6 @@
 
     #canvas {
       overflow: hidden;
-      width: windowWidth;
-      height: windowHeight;
       padding-left: 0px;
       padding-top: 0px;
     }
@@ -22,15 +20,17 @@
 </head>
 
 <body>
+  <canvas id="canvas"></canvas>
+
   <script>
     var noiseSpin = <%= noiseSpin %>;
     var noiseScale = <%= noiseScale %>;
     $.get('perlin.pde', function(sketchFile) {
       sketch = new Processing('canvas', sketchFile);
       console.log('Processing.js sketch ready');
+      $('#canvas').width(window.innerWidth);
+      $('#canvas').height(window.innerHeight);
     });
   </script>
-
-  <canvas id="canvas"></canvas>
 </body>
 </html>
